@@ -1,0 +1,8 @@
+.profile__info {
+  display: grid;
+  align-items: center;
+  grid-template-areas:
+    "name button"
+    "work .";
+  gap: 18px 16px;
+}

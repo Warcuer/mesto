@@ -1,0 +1,10 @@
+.profile__work {
+  grid-area: work;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.22;
+  color: #FFF;
+  background-color: #000000;
+  border: none;
+}
