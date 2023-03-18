@@ -9,4 +9,11 @@
   bottom: 25px;
   right: 20px;
   z-index: 3;
+  opacity: 1;
+  transition: opacity .5s ease-in;
+  cursor: pointer;
+}
+
+.element__like:hover{
+  opacity: .6;
 }
