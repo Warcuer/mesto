@@ -1,9 +1,15 @@
 .profile__work {
-  grid-area: work;
   font-family: 'Inter';
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   color: #FFF;
   margin: 0;
+  padding-top: 16px;
+}
+
+@media screen and (max-width: 1023px) {
+  .profile__work {
+    font-size: 16px;
+  }
 }
