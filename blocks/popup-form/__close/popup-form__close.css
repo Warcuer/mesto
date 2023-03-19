@@ -1,0 +1,13 @@
+.popup-form__close{
+  background-image: url(../../../images/colse.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  width: 32px;
+  height: 32px;
+  z-index: 99999;
+}

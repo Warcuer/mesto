@@ -1,0 +1,13 @@
+.popup-form{
+  display: flex;
+  flex-direction: column;
+  padding: 34px 36px 37px;
+  min-width: 430px;
+  position: fixed;
+  left: 50%;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
