@@ -7,3 +7,9 @@
   align-items: center;
   position: relative;
 }
+
+@media screen and (max-width: 1023px) {
+  .profile {
+    width: calc(100% - 100px * 2);
+  }
+}

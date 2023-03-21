@@ -1,9 +1,7 @@
 .element{
   overflow: hidden;
-  min-width: 282px;
   box-sizing: border-box;
   border-radius: 5%;
+  min-height: 361px;
   background-color: #fff;
-  position: relative;
-  z-index: 1;
 }
