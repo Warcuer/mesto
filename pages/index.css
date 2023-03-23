@@ -31,12 +31,12 @@
 @import url(../blocks/footer/__copy/footer__copy.css);
 /* POPUP */
 @import url(../blocks/popup/popup.css);
-@import url(../blocks/popup/__open/popup__open.css);
+@import url(../blocks/popup/_open/popup_open.css);
 /* POPUP-FORM */
 @import url(../blocks/popup-form/popup-form.css);
 @import url(../blocks/popup-form/__close/popup-form__close.css);
 @import url(../blocks/popup-form/__title/popup-form__title.css);
 @import url(../blocks/popup-form/__inputs/popup-form__inputs.css);
-@import url(../blocks/popup-form/_type_name/popup-form_type_name.css);
-@import url(../blocks/popup-form/_type_work/popup-form_type_work.css);
+@import url(../blocks/popup-form/_name/popup-form_name.css);
+@import url(../blocks/popup-form/_work/popup-form_work.css);
 @import url(../blocks/popup-form/__save/popup-form__save.css);

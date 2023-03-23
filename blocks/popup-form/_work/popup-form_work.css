@@ -1,4 +1,4 @@
-.popup-form_type_work{
+.popup-form_work{
   border: none;
   font-weight: 400;
   font-size: 14px;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popup-form_type_work {
+  .popup-form_work {
     padding: 0 0 9px;
   }
 }
