@@ -5,8 +5,8 @@ const open = document.querySelector('.profile__edit-buttom');
 const close = popupEdit.querySelector('.popup-form__close');
 const save = popupEdit.querySelector('.popup-form__save');
 
-const inputName = popupEdit.querySelector('.popup-form_name');
-const inputWork = popupEdit.querySelector('.popup-form_work');
+const inputName = popupEdit.querySelector('.popup-form__input_name');
+const inputWork = popupEdit.querySelector('.popup-form__input_work');
 
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
