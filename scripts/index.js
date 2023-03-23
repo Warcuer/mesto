@@ -1,34 +1,40 @@
-const popupEdit = document.querySelector('.popup_type_edit-form')
-const popupOpenForm = document.querySelector('.profile__edit-buttom')
-const popupCloseForm = popupEdit.querySelector('.popup-form__close');
-
-
-const submitInfo = popupEdit.querySelector('.popup-form__save');
-const inputName = popupEdit.querySelector('.popup-form__name');
-const inputWork = popupEdit.querySelector('.popup-form__work');
+const popupEdit = document.querySelector('.popup');
 const popupForm = popupEdit.querySelector('.popup-form');
 
+const open = document.querySelector('.profile__edit-buttom');
+const close = popupEdit.querySelector('.popup-form__close');
+const save = popupEdit.querySelector('.popup-form__save');
+
+const inputName = popupEdit.querySelector('.popup-form_type_name');
+const inputWork = popupEdit.querySelector('.popup-form_type_work');
 
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
-// Условие для открытия popup
-popupOpenForm.addEventListener('click', () => {
-  popupEdit.classList.add('popup__open')
-});
 
-// Условие для закрытия popup
-popupCloseForm.addEventListener('click', () => {
+
+function popupOpenForm() {
+  popupEdit.classList.add('popup__open');
+};
+
+function popupCloseForm() {
   popupEdit.classList.remove('popup__open');
-});
+};
 
-// Условие для сохранения информации пользователя
-popupForm.addEventListener('submit', (event) => {
+function saveInfo(event) {
   event.preventDefault();
-
   editName.textContent = inputName.value;
   editWork.textContent = inputWork.value;
+  popupCloseForm();
+}
 
-  popupEdit.classList.remove('popup__open');
-});
+
+// Условие для открытия popup
+open.addEventListener('click', popupOpenForm);
+
+// Условие для закрытия popup
+close.addEventListener('click', popupCloseForm);
+
+// Условие для сохранения информации пользователя
+popupForm.addEventListener('submit', saveInfo);
 

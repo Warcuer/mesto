@@ -1,3 +1,5 @@
+/* СБРОС СТИЛЕЙ БРАУЗЕРА */
+@import url(../vendor/normalize.css);
 /* ШРИФТЫ */
 @import url(../vendor/inter.css);
 /* PAGE */
@@ -23,6 +25,7 @@
 @import url(../blocks/element/__info/element__info.css);
 @import url(../blocks/element/__title/element__title.css);
 @import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__like/__like_active.css/element__like_active.css);
 /* FOOTER */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copy/footer__copy.css);
@@ -34,6 +37,6 @@
 @import url(../blocks/popup-form/__close/popup-form__close.css);
 @import url(../blocks/popup-form/__title/popup-form__title.css);
 @import url(../blocks/popup-form/__inputs/popup-form__inputs.css);
-@import url(../blocks/popup-form/__name/popup-form__name.css);
-@import url(../blocks/popup-form/__work/popup-form__work.css);
+@import url(../blocks/popup-form/_type_name/popup-form_type_name.css);
+@import url(../blocks/popup-form/_type_work/popup-form_type_work.css);
 @import url(../blocks/popup-form/__save/popup-form__save.css);

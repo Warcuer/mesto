@@ -3,5 +3,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 24px 20px 25px 21px;
+  padding: 24px 20px 22px 21px;
+}
+
+@media screen and (max-width: 500px) {
+  .element__info{
+    padding: 24px 20px 24px 21px;
+  }
+  
 }

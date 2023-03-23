@@ -1,6 +1,5 @@
-.popup-form__name {
+.popup-form_type_work{
   border: none;
-  font-family: 'Inter';
   font-weight: 400;
   font-size: 14px;
   line-height: 1.21;
@@ -10,7 +9,7 @@
 }
 
 @media screen and (max-width: 500px) {
-  .popup-form__name {
+  .popup-form_type_work {
     padding: 0 0 9px;
   }
 }

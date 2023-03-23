@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mesto</title>
-  <link rel="stylesheet" href="./vendor/normalize.css">
   <link rel="stylesheet" href="./pages/index.css">
   <script src="./scripts/index.js" defer></script>
 </head>
@@ -21,70 +20,70 @@
       <div class="profile__info">
         <h1 class="profile__name">Жак-Ив Кусто</h1>
         <p class="profile__work">Исследователь океана</p>
-        <button class="profile__edit-buttom" aria-label="Редактировать"></button>
+        <button type="button" class="profile__edit-buttom" aria-label="Редактировать"></button>
       </div>
-      <button class="profile__add-button" aria-label="Добавить"></button>
+      <button type="button" class="profile__add-button" aria-label="Добавить"></button>
     </section>
-    <section class="elements">
-      <div class="element">
+    <section aria-label="Карточки с фото" class="elements">
+      <article class="element">
         <img class="element__image" src="./images/Karachaevsk.jpg" alt="Карачаевск">
         <div class="element__info">
           <h2 class="element__title">Карачаевск</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
-      <div class="element">
+      </article>
+      <article class="element">
         <img class="element__image" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
         <div class="element__info">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
-      <div class="element">
+      </article>
+      <article class="element">
         <img class="element__image" src="./images/Dombai.jpg" alt="Домбай">
         <div class="element__info">
           <h2 class="element__title">Домбай</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
-      <div class="element">
+      </article>
+      <article class="element">
         <img class="element__image" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
         <div class="element__info">
           <h2 class="element__title">Гора Эльбрус</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
-      <div class="element">
+      </article>
+      <article class="element">
         <img class="element__image" src="./images/Dombai.jpg" alt="Домбай">
         <div class="element__info">
           <h2 class="element__title">Домбай</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
-      <div class="element">
+      </article>
+      <article class="element">
         <img class="element__image" src="./images/Karachaevsk.jpg" alt="Карачаево-Черкессия">
         <div class="element__info">
           <h2 class="element__title">Карачаево-Черкессия</h2>
-          <div class="element__like"></div>
+          <button type="button" class="element__like"></button>
         </div>
-      </div>
+      </article>
     </section>
   </main>
   <footer class="footer">
-    <h2 class="footer__copy">
+    <p class="footer__copy">
       &copy; 2023 Mesto Russia
-    </h2>
+    </p>
   </footer>
-  <div class="popup popup_type_edit-form">
-    <form class="popup-form">
+  <div class="popup">
+    <div class="popup-form">
       <button class="popup-form__close" aria-label="Закрыть"></button>
       <h2 class="popup-form__title">Редактировать профиль</h2>
-      <fieldset class="popup-form__inputs">
-        <input class="popup-form__name" type="text" placeholder="Жак-Ив Кусто" name="Имя">
-        <input class="popup-form__work" type="text" placeholder="Исследователь океана" name="Профессия">
-      </fieldset>
-      <button type="submit" class="popup-form__save" value="Сохранить">Сохранить</button>
-    </form>
+      <form name="form" class="popup-form__inputs">
+        <input class="popup-form_type_name" type="text" placeholder="Ваше Имя" name="name">
+        <input class="popup-form_type_work" type="text" placeholder="Ваша профессия" name="profession">
+        <button type="submit" class="popup-form__save" value="Сохранить">Сохранить</button>
+      </form>
+    </div>
   </div>
 
 </body>

@@ -1,22 +1,27 @@
 .profile__work {
+  max-width: 205px;
   grid-area: work;
-  font-family: 'Inter';
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   color: #FFF;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 1023px) {
   .profile__work {
+    max-width: 181px;
     font-size: 16px;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 500px) {
   .profile__work {
     font-size: 14px;
-    margin-left: 17px;
+    line-height: 1.1;
   }
 }

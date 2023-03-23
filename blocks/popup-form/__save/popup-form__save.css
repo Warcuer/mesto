@@ -1,15 +1,14 @@
 .popup-form__save {
   border: none;
   border-radius: 2px;
-  padding: 14px 0 18px;
+  padding: 12px 0 16px;
   color: #fff;
   background-color: #000000;
-  font-family: 'Inter';
   font-weight: 400;
   font-size: 18px;
   line-height: 1.22;
   text-align: center;
-  margin: 0;
+  margin: 20px 0 0 0;
   cursor: pointer;
   opacity: 1;
   transition: opacity .6s ease-in;

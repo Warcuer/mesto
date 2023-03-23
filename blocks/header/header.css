@@ -1,6 +1,5 @@
 .header {
   width: calc(100% - 200px * 2);
-  height: 74px;
   margin: 45px auto 0;
   border-bottom: 1px solid #545454;
   position: relative;
@@ -16,6 +15,5 @@
   .header {
     width: 100%;
     margin-top: 28px;
-    height: 54px;
   }
 }
