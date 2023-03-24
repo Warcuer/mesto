@@ -5,9 +5,3 @@
   row-gap: 30px;
   padding: 0;
 }
-
-@media screen and (max-width: 500px) {
-  .popup-form__inputs {
-    margin-bottom: 45px;
-  }
-}

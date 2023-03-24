@@ -5,13 +5,14 @@ const open = document.querySelector('.profile__edit-buttom');
 const close = popupEdit.querySelector('.popup-form__close');
 const save = popupEdit.querySelector('.popup-form__save');
 
-const inputName = popupEdit.querySelector('.popup-form__input_name');
-const inputWork = popupEdit.querySelector('.popup-form__input_work');
+const inputName = popupEdit.querySelector('.popup-form__input_type_name');
+const inputWork = popupEdit.querySelector('.popup-form__input_type_work');
 
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
-
+inputName.value = editName.textContent;
+inputWork.value = editWork.textContent;
 
 function popupOpenForm() {
   popupEdit.classList.add('popup_open');
