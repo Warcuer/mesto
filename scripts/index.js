@@ -11,11 +11,11 @@ const inputWork = popupEdit.querySelector('.popup-form__input_type_work');
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
-inputName.value = editName.textContent;
-inputWork.value = editWork.textContent;
 
 function popupOpenForm() {
   popupEdit.classList.add('popup_open');
+  inputName.value = editName.textContent;
+  inputWork.value = editWork.textContent;
 };
 
 function popupCloseForm() {
