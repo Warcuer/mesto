@@ -27,6 +27,7 @@
     <section aria-label="Карточки с фото" class="elements">
       <article class="element">
         <img class="element__image" src="./images/Karachaevsk.jpg" alt="Карачаевск">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Карачаевск</h2>
           <button type="button" class="element__like"></button>
@@ -34,6 +35,7 @@
       </article>
       <article class="element">
         <img class="element__image" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Гора Эльбрус</h2>
           <button type="button" class="element__like"></button>
@@ -41,6 +43,7 @@
       </article>
       <article class="element">
         <img class="element__image" src="./images/Dombai.jpg" alt="Домбай">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Домбай</h2>
           <button type="button" class="element__like"></button>
@@ -48,6 +51,7 @@
       </article>
       <article class="element">
         <img class="element__image" src="./images/Elbrus.jpg" alt="Гора Эльбрус">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Гора Эльбрус</h2>
           <button type="button" class="element__like"></button>
@@ -55,6 +59,7 @@
       </article>
       <article class="element">
         <img class="element__image" src="./images/Dombai.jpg" alt="Домбай">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Домбай</h2>
           <button type="button" class="element__like"></button>
@@ -62,6 +67,7 @@
       </article>
       <article class="element">
         <img class="element__image" src="./images/Karachaevsk.jpg" alt="Карачаево-Черкессия">
+        <div class="element__basket"></div>
         <div class="element__info">
           <h2 class="element__title">Карачаево-Черкессия</h2>
           <button type="button" class="element__like"></button>
@@ -74,16 +80,35 @@
       &copy; 2023 Mesto Russia
     </p>
   </footer>
-  <div class="popup">
-    <div class="popup-form">
-      <button class="popup-form__close" aria-label="Закрыть"></button>
-      <h2 class="popup-form__title">Редактировать профиль</h2>
-      <form name="form" class="popup-form__inputs">
-        <input class="popup-form__input popup-form__input_type_name" type="text" placeholder="Ваше Имя" name="name">
-        <input class="popup-form__input popup-form__input_type_work" type="text" placeholder="Ваша профессия"
+  <div class="popup popup_profile">
+    <div class="popup__case popup__case_profile">
+      <button class="popup__close popup__close_profile" aria-label="Закрыть"></button>
+      <h2 class="popup__title popup__title_profile">Редактировать профиль</h2>
+      <form name="form" class="popup__inputs popup__inputs_profile">
+        <input class="popup__input popup__input_type_name" type="text" placeholder="Ваше Имя" name="nameProfile">
+        <input class="popup__input popup__input_type_work" type="text" placeholder="Ваша профессия"
           name="profession">
-        <button type="submit" class="popup-form__save" value="Сохранить">Сохранить</button>
+        <button type="submit" class="popup__save popup__save_profile" value="Сохранить">Сохранить</button>
       </form>
+    </div>
+  </div>
+  <div class="popup popup_card">
+    <div class="popup__case popup__case_card">
+      <button class="popup__close popup__close_card" aria-label="Закрыть"></button>
+      <h2 class="popup__title popup__title_card">Новое место</h2>
+      <form name="form" class="popup__inputs popup__inputs_card">
+        <input class="popup__input popup__input_type_title" type="text" placeholder="Название" name="nameTitle">
+        <input class="popup__input popup__input_type_link" type="text" placeholder="Ссылка на картинку"
+          name="link">
+        <button type="submit" class="popup__save popup__save_card" value="Сохранить">Создать</button>
+      </form>
+    </div>
+  </div>
+  <div class="popup popup-image">
+    <div class="popup-case__image">
+      <button class="popup__close popup__case__close" aria-label="Закрыть"></button>
+      <img class="popup__case__image" src="#" alt="#">
+      <p class="popup__case__sing"></p>
     </div>
   </div>
 
