@@ -14,12 +14,12 @@
   transition: opacity .6s ease-in;
 }
 
-.popup-form__save:hover {
+.popup__save:hover {
   opacity: .8;
 }
 
 @media screen and (max-width: 500px) {
-  .popup-form__save {
+  .popup__save {
     padding: 15px 0 14px;
     font-size: 14px;
     line-height: 1.2;
