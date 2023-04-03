@@ -2,6 +2,7 @@
 
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card')
+const popupImage = document.querySelector('.popup-image')
 const popupFormProfile = popupProfile.querySelector('.popup__case_profile');
 const popupFormCard = popupCard.querySelector('.popup__case_card');
 
@@ -12,6 +13,10 @@ const saveEditProfile = popupProfile.querySelector('.popup__save_profile');
 const openEditCard = document.querySelector('.profile__add-button');
 const closeEditCard = popupCard.querySelector('.popup__close_card');
 const saveEditCard = popupCard.querySelector('.popup__save_card');
+
+const imageCard = document.querySelector('.popup-case__image')
+const imageSign = document.querySelector('.popup-case__sing')
+const closeImage = document.querySelector('.popup-case__close')
 
 const inputName = popupProfile.querySelector('.popup__input_type_name');
 const inputWork = popupProfile.querySelector('.popup__input_type_work');
@@ -37,11 +42,8 @@ openEditProfile.addEventListener('click', () => {
 });
 // Условие для открытия popup карточки
 openEditCard.addEventListener('click', () => {
-  // inputTitle.value = '';
-  // inputLink.value = '';
   popupOpen(popupCard);
 });
-
 // Условие для закрытия popup профиля
 closeEditProfile.addEventListener('click', () => {
   popupClose(popupProfile);
@@ -50,13 +52,17 @@ closeEditProfile.addEventListener('click', () => {
 closeEditCard.addEventListener('click', () => {
   popupClose(popupCard);
 });
+// Условие для закрытия popup фото
+closeImage.addEventListener('click', () => {
+  popupClose(popupImage)
+})
 
 // Условие для сохранения информации пользователя профиля
 popupFormProfile.addEventListener('submit', (event) => {
   event.preventDefault();
   editName.textContent = inputName.value;
   editWork.textContent = inputWork.value;
-  
+
   popupClose(popupProfile);
 });
 // Условие для сохранения карточки
@@ -90,6 +96,8 @@ const createCardElement = (cardDate) => {
   const cardLike = cardElement.querySelector('.element__like')
   const cardDelete = cardElement.querySelector('.element__basket')
 
+  cardElement.querySelector('.element__image').addEventListener('click', () => addOpenImage(cardDate) )
+
   const handelLike = () => {
     cardLike.classList.toggle('element__like_active')
   }
@@ -102,6 +110,13 @@ const createCardElement = (cardDate) => {
 
   return cardElement;
 };
+
+function addOpenImage(cardDate) {
+  popupImage.querySelector('.popup-case__image').src = cardDate.link;
+  popupImage.querySelector('.popup-case__sing').textContent = cardDate.name;
+  popupOpen(popupImage);
+};
+
 // Добавление карточки в начало блока
 const renderCardElement = (cardElement) => {
   cardBox.prepend(cardElement);

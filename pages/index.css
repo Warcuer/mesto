@@ -41,4 +41,9 @@
 @import url(../blocks/popup/__input/_type/popup__input_type_name.css);
 @import url(../blocks/popup/__input/_type/popup__input_type_work.css);
 @import url(../blocks/popup/__save/popup__save.css);
-
+/* POPUP-IMAGE */
+@import url(../blocks/popup-image/popup-image.css);
+/* POPUP-CASE */
+@import url(../blocks/popup-case/popup-case.css);
+@import url(../blocks/popup-case/__image/popup-case__image.css);
+@import url(../blocks/popup-case/__sign/popup-case__sign.css);
