@@ -75,36 +75,37 @@ popupFormCard.addEventListener('submit', (event) => {
   closePopup(popupCard);
 });
 
+
 const cardTemplate = document.getElementById('card-template')
 const cardBox = document.querySelector('.elements')
 
 // Создание карточки
 const createCardElement = (cardDate) => {
-  const cardElement = cardTemplate.content.querySelector('.element').cloneNode(true);
+  const cardElements = cardTemplate.content.querySelector('.element').cloneNode(true);
 
-  const cardTitle = cardElement.querySelector('.element__title');
-  const cardImg = cardElement.querySelector('.element__image');
+  const cardTitle = cardElements.querySelector('.element__title');
+  const cardImg = cardElements.querySelector('.element__image');
 
   cardTitle.textContent = cardDate.name;
   cardImg.src = cardDate.link;
   cardImg.alt = cardDate.name;
 
-  const cardLike = cardElement.querySelector('.element__like')
-  const cardDelete = cardElement.querySelector('.element__basket')
+  const cardLike = cardElements.querySelector('.element__like')
+  const cardDelete = cardElements.querySelector('.element__basket')
 
-  cardElement.querySelector('.element__image').addEventListener('click', () => addOpenImage(cardDate) )
+  cardElements.querySelector('.element__image').addEventListener('click', () => addOpenImage(cardDate) )
 
   const handelLike = () => {
     cardLike.classList.toggle('element__like_active')
   }
   const handelDelete = () => {
-    cardElement.remove();
+    cardElements.remove();
   }
 
   cardLike.addEventListener('click', handelLike)
   cardDelete.addEventListener('click', handelDelete)
 
-  return cardElement;
+  return cardElements;
 };
 
 function addOpenImage(cardDate) {
@@ -115,8 +116,8 @@ function addOpenImage(cardDate) {
 };
 
 // Добавление карточки в начало блока
-const renderCardElement = (cardElement) => {
-  cardBox.prepend(cardElement);
+const renderCardElement = (cardElements) => {
+  cardBox.prepend(cardElements);
 };
 // Проход по массиву с помощью метода ForEach
 initialCards.forEach((initialCards) => {
