@@ -7,16 +7,13 @@ const popupFormProfile = popupProfile.querySelector('.popup__case_profile');
 const popupFormCard = popupCard.querySelector('.popup__case_card');
 
 const profileOpenEdit = document.querySelector('.profile__edit-buttom');
-const profileCloseEdit = popupProfile.querySelector('.popup__close_profile');
 const profileSaveEdit = popupProfile.querySelector('.popup__save_profile');
 
 const cardOpenEdit = document.querySelector('.profile__add-button');
-const cardCloseEdit = popupCard.querySelector('.popup__close_card');
 const cardSaveEdit = popupCard.querySelector('.popup__save_card');
 
 const imageCard = document.querySelector('.popup-case__image')
 const imageSign = document.querySelector('.popup-case__sing')
-const closeImage = document.querySelector('.popup-case__close')
 
 const inputName = popupProfile.querySelector('.popup__input_type_name');
 const inputWork = popupProfile.querySelector('.popup__input_type_work');
