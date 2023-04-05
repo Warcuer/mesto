@@ -39,8 +39,8 @@ const closePopup = (popup) => {
 
 // Условие для открытия popup профиля
 profileOpenEdit.addEventListener('click', () => {
-  inputName.value = '';
-  inputWork.value = '';
+  inputName.value = editName.textContent;
+  inputWork.value = editWork.textContent;
   openPopup(popupProfile);
 });
 // Условие для открытия popup карточки
