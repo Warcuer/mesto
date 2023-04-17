@@ -23,6 +23,19 @@ const inputLink = popupCard.querySelector('.popup__input_type_link');
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
+// ЗАКРЫТИЕ ПО КНОПКЕ ESCAPE
+function handlEsc(evt){
+  if (evt.keyCode === 27){
+    closePopup(document.querySelector('.popup_open'));
+  };
+};
+// ЗАКРЫТИЕ ПО КЛИКУ НА ОВЕРЛЕЙ
+function handlMouseLeftClick(evt){
+  if(evt.target.classList.contains('popup')){
+    closePopup(evt.target);
+  };
+};
+
 // Условие для закрытия по "крестику"
 document.querySelectorAll('.popup__close').forEach(button => {
   const buttonPopup = button.closest('.popup');
@@ -31,10 +44,14 @@ document.querySelectorAll('.popup__close').forEach(button => {
 // ОТКРЫТЬ POPUP
 const openPopup = (popup) => {
   popup.classList.add('popup_open');
+  document.addEventListener('keydown', handlEsc);
+  document.addEventListener('mousedown', handlMouseLeftClick)
 };
 // ЗАКРЫТЬ POPUP
 const closePopup = (popup) => {
   popup.classList.remove('popup_open');
+  document.addEventListener('keydown', handlEsc);
+  document.addEventListener('mousedown', handlMouseLeftClick)
 };
 
 // Условие для открытия popup профиля
