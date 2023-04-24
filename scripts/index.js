@@ -1,5 +1,3 @@
-// import { initialCards } from "./card.js";
-
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card')
 const popupImage = document.querySelector('.popup-image')
