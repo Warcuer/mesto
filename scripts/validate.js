@@ -1,3 +1,14 @@
+export {validationConfig}
+
+const validationConfig = {
+  formSelector: '.popup__inputs',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_type_active'
+}
+
 function setIntputInvalid (form, input, errorMessage,{inputErrorClass, errorClass}) {
   const elementError = form.querySelector(`#error-${input.id}`);
   input.classList.add(inputErrorClass);
@@ -17,10 +28,24 @@ function checkInputValidity (form, input, errorElement) {
     setInputValid(form, input, errorElement);
   } else {
     setIntputInvalid(form, input, input.validationMessage, errorElement);
-    
   }
 };
 
+function hasInvalidInput (inputs) {
+  return inputs.some((input) => {
+    return !input.checkValidity();
+  })
+};
+
+function toggleButtonValidity (inputs, buttom, {inactiveButtonClass}) {
+  if (hasInvalidInput(inputs)) {
+    buttom.classList.add(inactiveButtonClass);
+    buttom.setAttribute("disabled",true);
+  } else {
+    buttom.classList.remove(inactiveButtonClass);
+    buttom.removeAttribute("disabled");
+  }
+};
 function setEventListeners (form, {inputSelector, submitButtonSelector, ...rest}) {
   const inputs = Array.from(form.querySelectorAll(inputSelector));
   const buttom = form.querySelector(submitButtonSelector);
@@ -40,27 +65,4 @@ function enableValidation ({ formSelector, ...rest }) {
   });
 }
 
-function hasInvalidInput (inputs) {
-  return inputs.some((input) => {
-    return !input.checkValidity();
-  })
-};
-
-function toggleButtonValidity (inputs, buttom, {inactiveButtonClass}) {
-  if (hasInvalidInput(inputs)) {
-    buttom.classList.add(inactiveButtonClass);
-    buttom.setAttribute("disabled", '');
-  } else {
-    buttom.classList.remove(inactiveButtonClass);
-    buttom.removeAttribute("disabled", '');
-  }
-};
-
-enableValidation({
-  formSelector: '.popup__inputs',
-  inputSelector: '.popup__input',
-  submitButtonSelector: '.popup__save',
-  inactiveButtonClass: 'popup__save_disabled',
-  inputErrorClass: 'popup__input_type_error',
-  errorClass: 'popup__input-error_type_active'
-});
+enableValidation(validationConfig);

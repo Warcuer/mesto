@@ -1,8 +1,11 @@
+import { initialCards } from "./card.js";
+import { validationConfig } from "./validate.js";
+
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card')
 const popupImage = document.querySelector('.popup-image')
 const popupFormProfile = popupProfile.querySelector('.popup__case_profile');
-const popupFormCard = popupCard.querySelector('.popup__case_card');
+const popupFormCard = popupCard.querySelector('.popup__inputs_card');
 
 const profileOpenEdit = document.querySelector('.profile__edit-buttom');
 const profileSaveEdit = popupProfile.querySelector('.popup__save_profile');
@@ -21,24 +24,22 @@ const inputLink = popupCard.querySelector('.popup__input_type_link');
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
+const cross = document.querySelectorAll('.popup__close');
+const escapeKey = 27;
+
 // ЗАКРЫТИЕ ПО КНОПКЕ ESCAPE
-function handlEsc(evt){
-  if (evt.keyCode === 27){
+function handlEsc(evt) {
+  if (evt.keyCode === escapeKey) {
     closePopup(document.querySelector('.popup_open'));
   };
 };
 // ЗАКРЫТИЕ ПО КЛИКУ НА ОВЕРЛЕЙ
-function handlMouseLeftClick(evt){
-  if(evt.target.classList.contains('popup')){
+function handlMouseLeftClick(evt) {
+  if (evt.target.classList.contains('popup')) {
     closePopup(evt.target);
   };
 };
 
-// Условие для закрытия по "крестику"
-document.querySelectorAll('.popup__close').forEach(button => {
-  const buttonPopup = button.closest('.popup');
-  button.addEventListener('click', () => closePopup(buttonPopup));
-})
 // ОТКРЫТЬ POPUP
 const openPopup = (popup) => {
   popup.classList.add('popup_open');
@@ -51,11 +52,16 @@ const closePopup = (popup) => {
   document.addEventListener('keydown', handlEsc);
   document.addEventListener('mousedown', handlMouseLeftClick)
 };
-
+function disabledSubmitButton(popup) {
+  const button = popup.querySelector(".popup__save");
+  button.classList.add("popup__save_disabled");
+  button.setAttribute("disabled", true);
+}
 // Условие для открытия popup профиля
 profileOpenEdit.addEventListener('click', () => {
   inputName.value = editName.textContent;
   inputWork.value = editWork.textContent;
+  disabledSubmitButton(popupProfile);
   openPopup(popupProfile);
 });
 // Условие для открытия popup карточки
@@ -68,7 +74,6 @@ popupFormProfile.addEventListener('submit', (event) => {
   event.preventDefault();
   editName.textContent = inputName.value;
   editWork.textContent = inputWork.value;
-
   closePopup(popupProfile);
 });
 // Условие для сохранения карточки
@@ -81,12 +86,12 @@ popupFormCard.addEventListener('submit', (event) => {
     name,
     link
   };
-  inputTitle.value = '';
-  inputLink.value = '';
+
   renderCardElement(createCardElement(cardAdd))
   closePopup(popupCard);
+  popupFormCard.reset();
+  disabledSubmitButton(popupCard);
 });
-
 
 const cardTemplate = document.getElementById('card-template')
 const cardBox = document.querySelector('.elements')
@@ -105,7 +110,7 @@ const createCardElement = (cardDate) => {
   const cardLike = cardElements.querySelector('.element__like')
   const cardDelete = cardElements.querySelector('.element__basket')
 
-  cardElements.querySelector('.element__image').addEventListener('click', () => addOpenImage(cardDate) )
+  cardElements.querySelector('.element__image').addEventListener('click', () => addOpenImage(cardDate))
 
   const handelLike = () => {
     cardLike.classList.toggle('element__like_active')
@@ -121,9 +126,9 @@ const createCardElement = (cardDate) => {
 };
 
 function addOpenImage(cardDate) {
-  popupImage.querySelector('.popup-case__image').src = cardDate.link;
-  popupImage.querySelector('.popup-case__image').alt = cardDate.name;
-  popupImage.querySelector('.popup-case__sing').textContent = cardDate.name;
+  imageCard.src = cardDate.link;
+  imageCard.alt = cardDate.name;
+  imageSign.textContent = cardDate.name;
   openPopup(popupImage);
 };
 
@@ -136,3 +141,11 @@ initialCards.forEach((initialCards) => {
   renderCardElement(createCardElement(initialCards));
 });
 
+// Условие для закрытия по "крестику"
+function closeCross() {
+  cross.forEach(button => {
+    const buttonPopup = button.closest('.popup');
+    button.addEventListener('click', () => closePopup(buttonPopup));
+  });
+};
+closeCross();

@@ -7,9 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mesto</title>
   <link rel="stylesheet" href="./pages/index.css">
-  <script src="./scripts/validate.js" defer></script>
-  <script src="./scripts/card.js" defer></script>
-  <script src="./scripts/index.js" defer></script>
+  <script src="./scripts/index.js" defer type="module"></script>
 
 </head>
 
@@ -46,7 +44,7 @@
         <input id="AboutMe" class="popup__input popup__input_type_work" type="text" minlength="2" maxlength="200"
           placeholder="О себе" name="AboutMe" required>
         <span id="error-AboutMe" class="popup__input-error"></span>
-        <button type="submit" class="popup__save popup__save_profile popup__save_disabled" value="Сохранить" disabled>Сохранить</button>
+        <button type="submit" class="popup__save popup__save_profile popup__save_disabled" value="Сохранить" disabled="true">Сохранить</button>
       </form>
     </div>
   </div>
@@ -61,7 +59,7 @@
         <input id="link" class="popup__input popup__input_type_link" type="url" placeholder="Ссылка на картинку" name="link"
           required>
         <span id="error-link" class="popup__input-error"></span>
-        <button type="submit" class="popup__save popup__save_card popup__save_disabled" value="Сохранить" disabled>Создать</button>
+        <button type="submit" class="popup__save popup__save_card popup__save_disabled" value="Сохранить" disabled="true">Создать</button>
       </form>
     </div>
   </div>
