@@ -1,7 +1,7 @@
 import Card from "./Card.js";
+import FormValidity from "./FormValidity.js";
 import { initialCards } from "./cards.js";
-import { openPopup,closePopup,handlMouseLeftClick } from "./utils.js";
-import { validationConfig } from "./validate.js";
+import { openPopup,closePopup} from "./utils.js";
 
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card')
@@ -75,3 +75,17 @@ const renderCardElement = (cardElements) => {
 initialCards.forEach((initialCards) => {
   renderCardElement(createCard(initialCards));
 });
+
+const validationConfig = {
+  formSelector: '.popup__inputs',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save',
+  inactiveButtonClass: 'popup__save_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__input-error_type_active'
+};
+
+const profileValidity = new FormValidity(validationConfig, popupProfile);
+profileValidity.enableValidation();
+const cardValidity = new FormValidity(validationConfig, popupCard);
+cardValidity.enableValidation();
