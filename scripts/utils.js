@@ -33,6 +33,6 @@ export const openPopup = (popup) => {
 // ЗАКРЫТЬ POPUP
 export const closePopup = (popup) => {
   popup.classList.remove('popup_open');
-  document.addEventListener('keydown', handlEsc);
-  document.addEventListener('mousedown', handlMouseLeftClick)
+  document.removeEventListener('keydown', handlEsc);
+  document.removeEventListener('mousedown', handlMouseLeftClick)
 };

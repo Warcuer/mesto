@@ -1,4 +1,3 @@
-
 class FormValidity{
   constructor(validationConfig,form){
     this.validationConfig = validationConfig;
@@ -61,6 +60,12 @@ class FormValidity{
       });
     });
   };
+
+  disabledSubmitButton() {
+    this._button = this._form.querySelector(".popup__save");
+    this._button.classList.add("popup__save_disabled");
+    this._button.setAttribute("disabled", true);
+  }
 
   enableValidation () {
     this._form.addEventListener('submit', (e) => {

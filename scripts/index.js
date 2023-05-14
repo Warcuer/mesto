@@ -5,10 +5,14 @@ import { openPopup,closePopup} from "./utils.js";
 
 const popupProfile = document.querySelector('.popup_profile');
 const popupCard = document.querySelector('.popup_card')
+export const popupImage = document.querySelector('.popup-image')
 const popupFormProfile = popupProfile.querySelector('.popup__case_profile');
 const popupFormCard = popupCard.querySelector('.popup__inputs_card');
 
 const profileOpenEdit = document.querySelector('.profile__edit-buttom');
+
+export const imageCard = popupImage.querySelector('.popup-case__image');
+export const imageSign = popupImage.querySelector('.popup-case__sing');
 
 const cardOpenEdit = document.querySelector('.profile__add-button');
 
@@ -20,16 +24,10 @@ const inputLink = popupCard.querySelector('.popup__input_type_link');
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
-function disabledSubmitButton(popup) {
-  const button = popup.querySelector(".popup__save");
-  button.classList.add("popup__save_disabled");
-  button.setAttribute("disabled", true);
-}
 // Условие для открытия popup профиля
 profileOpenEdit.addEventListener('click', () => {
   inputName.value = editName.textContent;
   inputWork.value = editWork.textContent;
-  disabledSubmitButton(popupProfile);
   openPopup(popupProfile);
 });
 // Условие для открытия popup карточки
@@ -58,7 +56,6 @@ popupFormCard.addEventListener('submit', (event) => {
   renderCardElement(createCard(cardAdd))
   closePopup(popupCard);
   popupFormCard.reset();
-  disabledSubmitButton(popupCard);
 });
 
 const cardBox = document.querySelector('.elements')

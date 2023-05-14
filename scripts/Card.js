@@ -1,13 +1,14 @@
-import { openPopup } from "./utils.js";
+import { openPopup} from "./utils.js";
+import { popupImage, imageCard, imageSign } from './index.js'
 
 //СОЗДАНИЕ КАРТОЧКИ
 class Card {
   constructor(data, templateSelector) {
     this._data = data;
     this._templateSelector = templateSelector;
-    this._popupImage = document.querySelector('.popup-image')
-    this._imageCard = this._popupImage.querySelector('.popup-case__image');
-    this._imageSign = this._popupImage.querySelector('.popup-case__sing');
+    this._popupImage = popupImage;
+    this._imageCard = imageCard;
+    this._imageSign = imageSign;
   }
 
   _addCardTemplate() {
@@ -42,6 +43,7 @@ class Card {
 
   _handelDelete = () => {
     this._element.remove();
+    this._element = null;
   }
 
   _addOpenImage = () => {
