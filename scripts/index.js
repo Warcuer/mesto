@@ -24,12 +24,13 @@ const inputLink = popupCard.querySelector('.popup__input_type_link');
 const editName = document.querySelector('.profile__name');
 const editWork = document.querySelector('.profile__work');
 
-// Условие для открытия popup профиля
-profileOpenEdit.addEventListener('click', () => {
-  inputName.value = editName.textContent;
-  inputWork.value = editWork.textContent;
-  openPopup(popupProfile);
-});
+
+// //Условие для открытия popup профиля
+// profileOpenEdit.addEventListener('click', () => {
+//   inputName.value = editName.textContent;
+//   inputWork.value = editWork.textContent;
+//   openPopup(popupProfile);
+// });
 // Условие для открытия popup карточки
 cardOpenEdit.addEventListener('click', () => {
   openPopup(popupCard);
@@ -58,20 +59,20 @@ popupFormCard.addEventListener('submit', (event) => {
   popupFormCard.reset();
 });
 
-const cardBox = document.querySelector('.elements')
+// const cardBox = document.querySelector('.elements')
 
-function createCard(data) {
-  const card = new Card(data, '#card-template');
-  return card.addCard();
-}
-// Добавление карточки в начало блока
-const renderCardElement = (cardElements) => {
-  cardBox.prepend(cardElements);
-};
-// Проход по массиву с помощью метода ForEach
-initialCards.forEach((initialCards) => {
-  renderCardElement(createCard(initialCards));
-});
+// function createCard(data) {
+//   const card = new Card(data, '#card-template');
+//   return card.addCard();
+// }
+// // Добавление карточки в начало блока
+// const renderCardElement = (cardElements) => {
+//   cardBox.prepend(cardElements);
+// };
+// // Проход по массиву с помощью метода ForEach
+// initialCards.forEach((initialCards) => {
+//   renderCardElement(createCard(initialCards));
+// });
 
 const validationConfig = {
   formSelector: '.popup__inputs',
@@ -86,3 +87,4 @@ const profileValidity = new FormValidity(validationConfig, popupProfile);
 profileValidity.enableValidation();
 const cardValidity = new FormValidity(validationConfig, popupCard);
 cardValidity.enableValidation();
+
