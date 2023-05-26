@@ -1,14 +1,15 @@
-import { openPopup} from "./utils.js";
-import { popupImage, imageCard, imageSign } from './index.js'
+import { openPopup } from "../utils/utils.js";
+import { popupImage, imageCard, imageSign } from '../utils/constants.js'
 
 //СОЗДАНИЕ КАРТОЧКИ
 class Card {
-  constructor(data, templateSelector) {
+  constructor({ data, handleCardClick }, templateSelector) {
     this._data = data;
     this._templateSelector = templateSelector;
     this._popupImage = popupImage;
     this._imageCard = imageCard;
     this._imageSign = imageSign;
+    this._handleCardClick = handleCardClick;
   }
 
   _addCardTemplate() {
@@ -32,7 +33,7 @@ class Card {
     return this._element;
   }
 
-  _setEventListeners(){
+  _setEventListeners() {
     this._cardLike.addEventListener('click', this._handelLike)
     this._cardDelete.addEventListener('click', this._handelDelete)
     this._cardImage.addEventListener('click', this._addOpenImage);
