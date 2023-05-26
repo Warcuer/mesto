@@ -18,9 +18,9 @@ export default class Popup {
     document.removeEventListener('mousedown', handlMouseLeftClick);
   };
 
-  _handleEscClose(evt) {
-    evt.preventDefault();
-    if (evt.keyCode === escapeKey) {
+  _handleEscClose(e) {
+    e.preventDefault();
+    if (e.keyCode === escapeKey) {
       this.close();
     };
   };
@@ -30,10 +30,10 @@ export default class Popup {
     this._closeButton.addEventListener('click', () => {
       this.close();
     });
-    this._popupSelector.addEventListener('click', (e) => {
-      if (e.currentTarget === evt.target) {
-        this.close(this._popupElement);
-      }
-    });
+    // this._popupSelector.addEventListener('click', (e) => {
+    //   if (e.currentTarget === e.target) {
+    //     this.close(this._popupSelector);
+    //   }
+    // });
   };
 };

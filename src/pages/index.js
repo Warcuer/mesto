@@ -20,20 +20,19 @@ import {
 } from "../utils/constants.js";
 import { openPopup,closePopup} from "../utils/utils.js";
 
-//инстанс класса для профиля
+//PROFILE inst
 const userInfo = new UserInfo({
   profileUserName: editName,
   profileAboutUs: editWork,
 });
 
-//инстанс класса для попапа профиля
+//POPUP-PROFILE inst
 const popupEditProfile = new PopupWithForm({
   popupSelector: popupProfile,
   handleFormSubmit: (data) => {
     userInfo.setUserInfo(data);
   }
 });
-popupEditProfile.setEventListeners();
 
 //ДОБАВИТЬ КАРТОЧКУ
 const popupAddCard = new PopupWithForm({
@@ -46,23 +45,22 @@ const popupAddCard = new PopupWithForm({
     section.addItem(createCard(data));
   },
 });
-popupAddCard.setEventListeners();
 
 //ОТКРЫТЬ ПОПАП ПРОФИЛЯ
 profileOpenEdit.addEventListener('click', () => {
   const data = userInfo.getUserInfo();
-  name.value = data.name;
-  aboutUs.value = data.aboutUs;
+  editName.value = data.userName;
+  editWork.value = data.aboutUs;
   popupEditProfile.open();
 });
 //ОТКРЫТЬ ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
 cardOpenEdit.addEventListener('click', () => {
-  cardValidity.this._toggleButtonValidity();
+  cardValidity.disabledSubmitButton();
   popupAddCard.open();
 });
 //ОТКРЫТЬ ПОПАП КАРТИНКИ
 const popupOpenImage = new PopupWithImage(popupImage);
-popupOpenImage.setEventListeners();
+
 function createCard(cardData) {
   const card = new Card(
     {
@@ -86,6 +84,10 @@ function renderCard(cardData) {
   section.addItem(cardElement);
 };
 section.renderItems(initialCards);
+
+popupEditProfile.setEventListeners();
+popupAddCard.setEventListeners();
+popupOpenImage.setEventListeners();
 
 //ВАЛИДАЦИЯ РЕДАКТИРОВАНИЯ ПРОФИЛЯ
 const profileValidity = new FormValidity(validationConfig, popupProfile);
