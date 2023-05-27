@@ -34,15 +34,15 @@ class Card {
   }
 
   _setEventListeners() {
-    this._cardLike.addEventListener('click', this._handelLike)
-    this._cardDelete.addEventListener('click', this._handelDelete)
+    this._cardLike.addEventListener('click', this._handleLike)
+    this._cardDelete.addEventListener('click', this._handleDelete)
     this._cardImage.addEventListener('click', this._addOpenImage);
   }
-  _handelLike = () => {
+  _handleLike = () => {
     this._cardLike.classList.toggle('element__like_active');
   }
 
-  _handelDelete = () => {
+  _handleDelete = () => {
     this._element.remove();
     this._element = null;
   }

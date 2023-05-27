@@ -2,7 +2,7 @@ import './index.css';
 
 import Card from "../components/Card.js";
 import FormValidity from "../components/FormValidity.js";
-import PopupWithForm from '../components/PopupWhithForm.js';
+import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js'
 import Section from '../components/Section.js';
 import UserInfo from '../components/UserInfo.js';

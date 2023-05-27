@@ -19,7 +19,7 @@ export default class Popup {
   };
 
   _handleEscClose(e) {
-    e.preventDefault();
+    //e.preventDefault();
     if (e.keyCode === escapeKey) {
       this.close();
     };
@@ -30,10 +30,10 @@ export default class Popup {
     this._closeButton.addEventListener('click', () => {
       this.close();
     });
-    // this._popupSelector.addEventListener('click', (e) => {
-    //   if (e.currentTarget === e.target) {
-    //     this.close(this._popupSelector);
-    //   }
-    // });
+    this._popupSelector.addEventListener('click', (e) => {
+      if (e.currentTarget === e.target) {
+        this.close(this._popupSelector);
+      }
+    });
   };
 };

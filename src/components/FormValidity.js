@@ -1,4 +1,4 @@
-class FormValidity {
+export default class FormValidity {
   constructor(validationConfig, form) {
     this.validationConfig = validationConfig;
     this._form = form;
@@ -81,5 +81,3 @@ class FormValidity {
     });
   };
 };
-
-export default FormValidity;
