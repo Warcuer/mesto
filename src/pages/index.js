@@ -49,8 +49,8 @@ const popupAddCard = new PopupWithForm({
 //ОТКРЫТЬ ПОПАП ПРОФИЛЯ
 profileOpenEdit.addEventListener('click', () => {
   const data = userInfo.getUserInfo();
-  editName.value = data.userName;
-  editWork.value = data.aboutUs;
+  inputName.value = data.userName;
+  inputWork.value = data.aboutUs;
   popupEditProfile.open();
 });
 //ОТКРЫТЬ ПОПАП ДОБАВЛЕНИЯ КАРТОЧКИ
