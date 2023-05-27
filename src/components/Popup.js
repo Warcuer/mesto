@@ -19,7 +19,6 @@ export default class Popup {
   };
 
   _handleEscClose(e) {
-    //e.preventDefault();
     if (e.keyCode === escapeKey) {
       this.close();
     };
