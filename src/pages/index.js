@@ -40,7 +40,7 @@ const popupAddCard = new PopupWithForm({
   handleFormSubmit: (input) => {
     const data = {
       name: input.name,
-      link: input.link,
+      link: input.link
     };
     section.addItem(createCard(data));
   },
