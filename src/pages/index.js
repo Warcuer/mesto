@@ -10,21 +10,19 @@ import {
   initialCards,
   validationConfig,
   popupProfile, popupCard,
-  popupImage, popupFormProfile,
-  popupFormCard, profileOpenEdit,
-  imageCard, imageSign,
+  popupImage, profileOpenEdit,
   cardOpenEdit, inputName,
-  inputWork, inputTitle,
-  inputLink, editName,
-  editWork, cardBox
+  inputWork, editName,
+  editWork
 } from "../utils/constants.js";
-import { openPopup,closePopup} from "../utils/utils.js";
 
 //PROFILE inst
 const userInfo = new UserInfo({
-  profileUserName: editName,
-  profileAboutUs: editWork,
+  profileUserName: '.profile__name',
+  profileAboutUs: '.profile__work'
 });
+
+console.log(editName)
 
 //POPUP-PROFILE inst
 const popupEditProfile = new PopupWithForm({
@@ -32,7 +30,9 @@ const popupEditProfile = new PopupWithForm({
   handleFormSubmit: (data) => {
     userInfo.setUserInfo(data);
   }
+  
 });
+
 
 //ДОБАВИТЬ КАРТОЧКУ
 const popupAddCard = new PopupWithForm({
@@ -43,7 +43,7 @@ const popupAddCard = new PopupWithForm({
       link: input.link
     };
     section.addItem(createCard(data));
-  },
+  }
 });
 
 //ОТКРЫТЬ ПОПАП ПРОФИЛЯ
