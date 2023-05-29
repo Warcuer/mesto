@@ -22,17 +22,3 @@ export function handlMouseLeftClick(evt) {
     closePopup(evt.target);
   };
 };
-
-// ОТКРЫТЬ POPUP
-export const openPopup = (popup) => {
-  popup.classList.add('popup_open');
-  document.addEventListener('keydown', handlEsc);
-  document.addEventListener('mousedown', handlMouseLeftClick)
-};
-
-// ЗАКРЫТЬ POPUP
-export const closePopup = (popup) => {
-  popup.classList.remove('popup_open');
-  document.removeEventListener('keydown', handlEsc);
-  document.removeEventListener('mousedown', handlMouseLeftClick)
-};

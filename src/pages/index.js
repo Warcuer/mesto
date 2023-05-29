@@ -18,29 +18,30 @@ import {
 
 //PROFILE inst
 const userInfo = new UserInfo({
-  profileUserName: '.profile__name',
-  profileAboutUs: '.profile__work'
+  userName: editName,
+  aboutUs: editWork
 });
-
-console.log(editName)
 
 //POPUP-PROFILE inst
 const popupEditProfile = new PopupWithForm({
   popupSelector: popupProfile,
-  handleFormSubmit: (data) => {
+  handleFormSubmit: (input) => {
+    const data = {
+    userName: input['nameProfile'],
+    aboutUs: input['AboutMe']
+    }
     userInfo.setUserInfo(data);
   }
   
 });
-
 
 //ДОБАВИТЬ КАРТОЧКУ
 const popupAddCard = new PopupWithForm({
   popupSelector: popupCard,
   handleFormSubmit: (input) => {
     const data = {
-      name: input.name,
-      link: input.link
+      name: input['nameTitle'],
+      link: input['link']
     };
     section.addItem(createCard(data));
   }
@@ -60,7 +61,6 @@ cardOpenEdit.addEventListener('click', () => {
 });
 //ОТКРЫТЬ ПОПАП КАРТИНКИ
 const popupOpenImage = new PopupWithImage(popupImage);
-
 function createCard(cardData) {
   const card = new Card(
     {

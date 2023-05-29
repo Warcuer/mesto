@@ -1,4 +1,4 @@
-import {escapeKey,handlMouseLeftClick} from '../utils/utils.js';
+import { escapeKey, handlMouseLeftClick } from '../utils/utils.js';
 
 export default class Popup {
   constructor(popupSelector) {
