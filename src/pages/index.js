@@ -24,7 +24,7 @@ const userInfo = new UserInfo({
 
 //POPUP-PROFILE inst
 const popupEditProfile = new PopupWithForm({
-  popupSelector: popupProfile,
+  popupElement: popupProfile,
   handleFormSubmit: (input) => {
     const data = {
     userName: input['nameProfile'],
@@ -37,7 +37,7 @@ const popupEditProfile = new PopupWithForm({
 
 //ДОБАВИТЬ КАРТОЧКУ
 const popupAddCard = new PopupWithForm({
-  popupSelector: popupCard,
+  popupElement: popupCard,
   handleFormSubmit: (input) => {
     const data = {
       name: input['nameTitle'],
