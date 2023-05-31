@@ -25,7 +25,7 @@ export default class Popup {
   _handleMouseClick() {
     this._popupElement.addEventListener('click', (e) => {
       if (e.currentTarget === e.target) {
-        this.close(this._popupElement);
+        this.close();
       }
     });
   };
