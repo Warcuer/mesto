@@ -159,7 +159,7 @@ const popupAddCard = new PopupWithForm({
   popupElement: popupCard,
   handleFormSubmit: (data) => {
     loading(popupCard, 'Сохранение...');
-    api.addNewCard(data.nameImg, data.linkImg)
+    api.addNewCard(data.nameTitle, data.link)
       .then((res) => {
         section.newAddItem(createCard(res));
         popupAddCard.close();

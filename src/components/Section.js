@@ -5,7 +5,7 @@ export default class Section {
   };
 
   addItem(card) {
-    this._selector.prepend(card);
+    this._selector.append(card);
   };
 
   renderItems(items) {
@@ -15,6 +15,6 @@ export default class Section {
   };
   
   newAddItem(card){
-    this._selector.append(card);
+    this._selector.prepend(card);
   };
 };
