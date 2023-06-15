@@ -73,6 +73,7 @@ export default class FormValidity {
 
     this._setEventListeners();
   };
+
   resValidity() {
     this._toggleButtonValidity();
 

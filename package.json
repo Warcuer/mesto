@@ -6,7 +6,6 @@
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack serve",
-    "devtool": "eval-source-map",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },

@@ -1,5 +1,3 @@
-import { escapeKey} from '../utils/utils.js';
-
 export default class Popup {
   constructor(popupElement) {
     this._popupElement = popupElement;
@@ -17,7 +15,7 @@ export default class Popup {
   };
 
   _handleEscClose(e) {
-    if (e.keyCode === escapeKey) {
+    if (e.key === 'Escape') {
       this.close();
     };
   };

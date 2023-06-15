@@ -1,29 +1,29 @@
-export const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
+// export const initialCards = [
+//   {
+//     name: 'Архыз',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+//   },
+//   {
+//     name: 'Челябинская область',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+//   },
+//   {
+//     name: 'Иваново',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+//   },
+//   {
+//     name: 'Камчатка',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+//   },
+//   {
+//     name: 'Холмогорский район',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+//   },
+//   {
+//     name: 'Байкал',
+//     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+//   }
+// ];
 
 export const validationConfig = {
   formSelector: '.popup__inputs',
@@ -39,6 +39,7 @@ export const popupCard = document.querySelector('.popup_card')
 export const popupImage = document.querySelector('.popup-image')
 export const popupFormProfile = popupProfile.querySelector('.popup__case_profile');
 export const popupFormCard = popupCard.querySelector('.popup__inputs_card');
+export const profileAvatar = document.querySelector('.profile__avatar');
 
 export const profileOpenEdit = document.querySelector('.profile__edit-buttom');
 
@@ -55,4 +56,9 @@ export const inputLink = popupCard.querySelector('.popup__input_type_link');
 export const editName = document.querySelector('.profile__name');
 export const editWork = document.querySelector('.profile__work');
 
-export const cardBox = document.querySelector('.elements')
+export const cardBox = document.querySelector('.elements');
+
+export const popupConfirmClose = document.querySelector('.popup_confirm');
+export const popupAvatar = document.querySelector('.popup_avatar');
+export const openAvatar = document.querySelector('.profile__edit-avatar');
+

@@ -18,6 +18,7 @@ module.exports = {
 
     open: true 
   },
+  devtool: "eval-source-map",
   module: {
     rules: [ 
       {

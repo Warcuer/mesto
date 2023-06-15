@@ -1,5 +1,9 @@
 const cross = document.querySelectorAll('.popup__close');
-export const escapeKey = 27;
+
+export function loading(popup, text) {
+	const submitButton = popup.querySelector('.popup__save')
+	submitButton.textContent = text;
+}
 
 // Условие для закрытия по "крестику"
 export function closeCross() {
