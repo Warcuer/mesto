@@ -34,7 +34,7 @@ Promise.all([api.getUserData(), api.getInitialsCards()])
   .then(([data, cards]) => {
     userId = data._id;
     userInfo.setUserInfo(data);
-    section.renderItems(cards);
+    cardsContainer.renderItems(cards);
   })
   .catch((err) => {
     console.log(err);
@@ -77,7 +77,7 @@ const popupUserAvatar = new PopupWithForm({
     api.setUserAvatar(data)
       .then((res) => {
         userInfo.setUserInfo(res)
-        setUserAvatar.close();
+        popupUserAvatar.close();
       })
       .catch((err) => {
         console.log(`setUserAvatar - ${err}`);
@@ -140,9 +140,9 @@ function createCard(data) {
 };
 
 //РЕНДЕР КАРТОЧЕК ИЗ МАССИВА
-const section = new Section({
+const cardsContainer = new Section({
   renderer: (item) => {
-    section.addItem(createCard(item))
+    cardsContainer.addItem(createCard(item))
   }
 }, '.elements');
 
@@ -162,7 +162,7 @@ const popupAddCard = new PopupWithForm({
     loading(popupCard, 'Сохранение...');
     api.addNewCard(data.nameTitle, data.link)
       .then((res) => {
-        section.newAddItem(createCard(res));
+        cardsContainer.newAddItem(createCard(res));
         popupAddCard.close();
       })
       .catch((err) => {

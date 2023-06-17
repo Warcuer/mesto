@@ -48,9 +48,7 @@ export default class FormValidity {
     this._toggleButtonValidity();
 
     this._form.addEventListener('reset', () => {
-      setTimeout(() => {
         this._toggleButtonValidity();
-      }, 0);
     });
 
     this._inputs.forEach((input) => {

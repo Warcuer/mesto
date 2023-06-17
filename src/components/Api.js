@@ -29,7 +29,6 @@ export default class Api {
 	};
 
 	setUserData(data) {
-		console.log(data)
 		return fetch(`${this._url}/users/me`, {
 			method: 'PATCH',
 			headers: this._headers,
