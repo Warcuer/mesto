@@ -13,8 +13,8 @@ export default class Section {
       this._renderer(item);
     });
   };
-  
-  newAddItem(card){
+
+  newAddItem(card) {
     this._selector.prepend(card);
   };
 };

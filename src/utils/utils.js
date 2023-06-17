@@ -1,8 +1,8 @@
 const cross = document.querySelectorAll('.popup__close');
 
 export function loading(popup, text) {
-	const submitButton = popup.querySelector('.popup__save')
-	submitButton.textContent = text;
+  const submitButton = popup.querySelector('.popup__save')
+  submitButton.textContent = text;
 }
 
 // Условие для закрытия по "крестику"

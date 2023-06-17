@@ -116,7 +116,7 @@ function createCard(data) {
           })
       })
     },
-    
+
     handleSetLike: (cardId) => {
       api.setLike(cardId)
         .then((data) => {

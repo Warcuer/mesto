@@ -1,34 +1,34 @@
 export default class Api {
-  constructor(config) {
-    this._url = config.url;
-    this._headers = config.headers;
-  };
+	constructor(config) {
+		this._url = config.url;
+		this._headers = config.headers;
+	};
 
-  //ПРОВЕРКА НА ОШИБКИ
-  _checkResponse(res) {
-    if (!res.ok) {
-      return Promise.reject(`Ошибка: ${res.status}`);
-    }
-    return res.json();
-  };
+	//ПРОВЕРКА НА ОШИБКИ
+	_checkResponse(res) {
+		if (!res.ok) {
+			return Promise.reject(`Ошибка: ${res.status}`);
+		}
+		return res.json();
+	};
 
-  //ЗАПРОС ДАННЫХ С СЕРВЕРА
-  getInitialsCards() {
-    return fetch(`${this._url}/cards`, {
-      method: 'GET',
-      headers: this._headers
-    })
-    .then(this._checkResponse)
-  };
+	//ЗАПРОС ДАННЫХ С СЕРВЕРА
+	getInitialsCards() {
+		return fetch(`${this._url}/cards`, {
+			method: 'GET',
+			headers: this._headers
+		})
+			.then(this._checkResponse)
+	};
 
-  getUserData() {
+	getUserData() {
 		return fetch(`${this._url}/users/me`, {
 			headers: this._headers
 		})
-		.then(this._checkResponse)
+			.then(this._checkResponse)
 	};
 
-  setUserData(data) {
+	setUserData(data) {
 		console.log(data)
 		return fetch(`${this._url}/users/me`, {
 			method: 'PATCH',
@@ -38,10 +38,10 @@ export default class Api {
 				about: data.about
 			})
 		})
-		.then(this._checkResponse)
+			.then(this._checkResponse)
 	};
 
-  setUserAvatar(data) {
+	setUserAvatar(data) {
 		return fetch(`${this._url}/users/me/avatar`, {
 			method: 'PATCH',
 			headers: this._headers,
@@ -49,42 +49,42 @@ export default class Api {
 				avatar: data.avatar
 			})
 		})
-		.then(this._checkResponse)
+			.then(this._checkResponse)
 	};
 
-  setLike(cardId) {
+	setLike(cardId) {
 		return fetch(`${this._url}/cards/${cardId}/likes`, {
 			method: 'PUT',
 			headers: this._headers,
 		})
-    .then(this._checkResponse)
+			.then(this._checkResponse)
 	};
 
-  //УДАЛИТЬ ЛАЙК
+	//УДАЛИТЬ ЛАЙК
 	deleteLike(cardId) {
 		return fetch(`${this._url}/cards/${cardId}/likes`, {
 			method: 'DELETE',
 			headers: this._headers,
 		})
-    .then(this._checkResponse)
+			.then(this._checkResponse)
 	};
 
-  //ДОБАВЛЕНИЕ НОВОЙ КАРТОЧКИ В СЕТКУ
-  addNewCard(name, link) {
-    return fetch(`${this._url}/cards`, {
-      method: 'POST',
-      headers: this._headers,
-      body: JSON.stringify({ name, link })
-    })
-    .then(this._checkResponse);
-  };
+	//ДОБАВЛЕНИЕ НОВОЙ КАРТОЧКИ В СЕТКУ
+	addNewCard(name, link) {
+		return fetch(`${this._url}/cards`, {
+			method: 'POST',
+			headers: this._headers,
+			body: JSON.stringify({ name, link })
+		})
+			.then(this._checkResponse);
+	};
 
-  //УДАЛИТЬ КАРТОЧКУ
-  handleDelete(cardId) {
+	//УДАЛИТЬ КАРТОЧКУ
+	handleDelete(cardId) {
 		return fetch(`${this._url}/cards/${cardId}`, {
 			method: 'DELETE',
 			headers: this._headers,
 		})
-		.then(this._checkResponse);
+			.then(this._checkResponse);
 	};
 };
