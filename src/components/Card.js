@@ -62,19 +62,20 @@ export default class Card {
     this._cardDelete.addEventListener('click', () => {
       this._handleDeleteClick()
     });
-
+  
     this._cardImage.addEventListener('click', () =>
       this._handleCardClick(this._name, this._link)
     );
-
+  
     this._cardLike.addEventListener('click', () => {
       if (this._cardLike.classList.contains('element__like_active')) {
         this._handleDeleteLike(this._cardId);
       } else {
         this._handleSetLike(this._cardId);
       }
-    });
+    })
   }
+
   handleDelete = () => {
     if (this._element) {
       this._element.remove();
@@ -83,7 +84,7 @@ export default class Card {
   }
 
   handleLike = (data) => {
-    this._likes = data.like;
+    this._likes = data.likes;
     this._likesCount.textContent = this._likes.length;
     this._cardLike.classList.toggle('element__like_active');
   }

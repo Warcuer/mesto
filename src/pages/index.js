@@ -58,6 +58,7 @@ const popupEditProfile = new PopupWithForm({
     api.setUserData(data)
       .then((res) => {
         userInfo.setUserInfo(res);
+        popupEditProfile.close();
       })
       .catch((err) => {
         console.log(`setDataUser - ${err}`);
@@ -76,6 +77,7 @@ const popupUserAvatar = new PopupWithForm({
     api.setUserAvatar(data)
       .then((res) => {
         userInfo.setUserInfo(res)
+        setUserAvatar.close();
       })
       .catch((err) => {
         console.log(`setUserAvatar - ${err}`);
@@ -114,6 +116,7 @@ function createCard(data) {
           })
       })
     },
+    
     handleSetLike: (cardId) => {
       api.setLike(cardId)
         .then((data) => {

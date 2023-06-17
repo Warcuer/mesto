@@ -42,7 +42,6 @@ export default class Api {
 	};
 
   setUserAvatar(data) {
-		console.log(data)
 		return fetch(`${this._url}/users/me/avatar`, {
 			method: 'PATCH',
 			headers: this._headers,
