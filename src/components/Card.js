@@ -41,7 +41,7 @@ export default class Card {
     }
 
     this._checkLikedState();
-    this._setEventListeners()
+    this._setEventListeners();
 
     return this._element;
   }

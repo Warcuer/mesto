@@ -7,10 +7,10 @@ export default class PopupWithImage extends Popup {
     this._imageSign = this._popupElement.querySelector('.popup-case__sing');
   };
 
-  open(data) {
+  open(name, link) {
     super.open();
-    this._imageCard.src = data.link;
-    this._imageSign.textContent = data.name;
-    this._imageCard.alt = data.alt
+    this._imageCard.src = link;
+    this._imageSign.textContent = name;
+    this._imageCard.alt = name;
   };
 };

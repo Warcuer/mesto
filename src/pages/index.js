@@ -20,7 +20,7 @@ import {
   profileAvatar
 } from "../utils/constants.js";
 
-let userId = 0;
+let userId;
 
 const api = new Api({
   url: 'https://mesto.nomoreparties.co/v1/cohort-68',
@@ -30,7 +30,7 @@ const api = new Api({
   }
 })
 
-Promise.all([api.getDataUser(), api.getInitialsCards()])
+Promise.all([api.getUserData(), api.getInitialsCards()])
   .then(([data, cards]) => {
     userId = data._id;
     userInfo.setUserInfo(data);
@@ -58,10 +58,9 @@ const popupEditProfile = new PopupWithForm({
     api.setUserData(data)
       .then((res) => {
         userInfo.setUserInfo(res);
-        popupEditProfile.close();
       })
       .catch((err) => {
-        console.log(`setDataUser - ошибка: ${err}`);
+        console.log(`setDataUser - ${err}`);
       })
       .finally(() => {
         loading(popupProfile, 'Сохранить');
@@ -77,16 +76,15 @@ const popupUserAvatar = new PopupWithForm({
     api.setUserAvatar(data)
       .then((res) => {
         userInfo.setUserInfo(res)
-        popupUserAvatar.close();
       })
       .catch((err) => {
-        console.log(`setUserAvatar - ошибка: ${err}`);
+        console.log(`setUserAvatar - ${err}`);
       })
       .finally(() => {
         loading(popupAvatar, 'Сохранить')
       })
   }
-})
+});
 openAvatar.addEventListener('click', () => {
   avatarValidity.resValidity();
   popupUserAvatar.open();
@@ -109,7 +107,7 @@ function createCard(data) {
             popupWithConfirm.close();
           })
           .catch((err) => {
-            console.log(`handleDelete - ошибка: ${err}`);
+            console.log(`handleDelete - ${err}`);
           })
           .finally(() => {
             loading(popupConfirmClose, 'Да');
@@ -122,7 +120,7 @@ function createCard(data) {
           card.handleLike(data);
         })
         .catch((err) => {
-          console.log(`handleSetLike - ошибка: ${err}`);
+          console.log(`handleSetLike - ${err}`);
         });
     },
     handleDeleteLike: (cardId) => {
@@ -131,7 +129,7 @@ function createCard(data) {
           card.handleLike(data);
         })
         .catch((err) => {
-          console.log(`handleDeleteLike - ошибка: ${err}`);
+          console.log(`handleDeleteLike - ${err}`);
         });
     },
   }, '#card-template', userId)
@@ -148,8 +146,8 @@ const section = new Section({
 //ОТКРЫТЬ ПОПАП ПРОФИЛЯ
 profileOpenEdit.addEventListener('click', () => {
   const data = userInfo.getUserInfo();
-  inputName.value = data.userName;
-  inputWork.value = data.aboutUs;
+  inputName.value = data.name;
+  inputWork.value = data.about;
   popupEditProfile.open();
   profileValidity.resValidity();
 });
@@ -165,7 +163,7 @@ const popupAddCard = new PopupWithForm({
         popupAddCard.close();
       })
       .catch((err) => {
-        console.log(`addNewCard - ошибка: ${err}`);
+        console.log(`addNewCard - ${err}`);
       })
       .finally(() => {
         loading(popupCard, 'Создать');

@@ -1,7 +1,7 @@
 export default class Api {
-  constructor(options) {
-    this._url = options.url;
-    this._headers = options.headers;
+  constructor(config) {
+    this._url = config.url;
+    this._headers = config.headers;
   };
 
   //ПРОВЕРКА НА ОШИБКИ
@@ -21,7 +21,7 @@ export default class Api {
     .then(this._checkResponse)
   };
 
-  getDataUser() {
+  getUserData() {
 		return fetch(`${this._url}/users/me`, {
 			headers: this._headers
 		})
@@ -29,23 +29,25 @@ export default class Api {
 	};
 
   setUserData(data) {
+		console.log(data)
 		return fetch(`${this._url}/users/me`, {
 			method: 'PATCH',
 			headers: this._headers,
 			body: JSON.stringify({
-				userName: data.userName,
-				aboutUs: data.aboutUs
+				name: data.name,
+				about: data.about
 			})
 		})
 		.then(this._checkResponse)
 	};
 
   setUserAvatar(data) {
+		console.log(data)
 		return fetch(`${this._url}/users/me/avatar`, {
 			method: 'PATCH',
 			headers: this._headers,
 			body: JSON.stringify({
-				userAvatar: data.userAvatar
+				avatar: data.avatar
 			})
 		})
 		.then(this._checkResponse)
